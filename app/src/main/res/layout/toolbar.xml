@@ -1,0 +1,15 @@
+<android.support.v7.widget.Toolbar
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/myToolbar"
+  android:layout_width="match_parent"
+  android:layout_height="?attr/actionBarSize"
+  android:minHeight="?attr/actionBarSize"
+  app:layout_scrollFlags="snap"
+  app:title="Fragment main"
+  android:theme="@style/MyToolbar"
+  app:popupTheme="@style/Theme.AppCompat.NoActionBar"
+  android:elevation="4dp"
+  app:layout_collapseMode="pin"
+  />
+

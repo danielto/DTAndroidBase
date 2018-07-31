@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:ignore="MissingTranslation" >
+
+  <string name="pref_key_first_run">pref_first_run</string>
+
+  <string name="pref_user_id">pref_user_id</string>
+  <string name="pref_user_phone_number">pref_user_phone_number</string>
+
+</resources>

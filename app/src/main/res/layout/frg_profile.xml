@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  >
+
+  <android.support.design.widget.AppBarLayout
+    style="@style/MyToolbar"
+    android:id="@+id/app_bar"
+    android:layout_width="match_parent"
+    android:layout_height="180dp"
+    android:fitsSystemWindows="true"
+    android:theme="@style/AppTheme.AppBarOverlay"
+    >
+
+    <android.support.design.widget.CollapsingToolbarLayout
+      android:id="@+id/collapsingToolbar"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      app:layout_scrollFlags="scroll|exitUntilCollapsed"
+      app:expandedTitleMarginEnd="64dp"
+      app:expandedTitleMarginStart="48dp"
+      app:expandedTitleTextAppearance="@style/ExpandededAppBar"
+      app:collapsedTitleTextAppearance="@style/CollapsedAppBar"
+      android:fitsSystemWindows="true"
+      app:toolbarId="@id/myToolbar"
+      app:contentScrim="?attr/colorPrimary"
+      >
+
+      <View
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:background="@color/red"
+        app:layout_collapseMode="parallax"
+        app:layout_collapseParallaxMultiplier="0.7"
+        />
+
+      <android.support.v7.widget.Toolbar
+        android:id="@+id/myToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:theme="@style/MyToolbarRed"
+        app:popupTheme="@style/MyToolbarRed"
+        app:layout_scrollFlags="scroll|enterAlways"
+        app:layout_collapseMode="pin"
+        />
+
+    </android.support.design.widget.CollapsingToolbarLayout>
+
+  </android.support.design.widget.AppBarLayout>
+
+  <android.support.v4.widget.NestedScrollView
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.presenter.main.MainFragment"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+    <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="@dimen/margin_medium"
+      >
+
+      <android.support.v7.widget.CardView
+        android:id="@+id/cvEmailWaiting"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_huge"
+        style="@style/MyCardView"
+        >
+
+        <TextView
+          android:id="@+id/tvEmailWaiting"
+          style="@style/Text.Medium.Red.Bold"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:padding="@dimen/margin_huge"
+          android:text="@string/email_waiting_message"
+          />
+
+      </android.support.v7.widget.CardView>
+
+      <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/margin_huge"
+        style="@style/MyCardView"
+        >
+
+        <LinearLayout
+          android:orientation="vertical"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          >
+
+          <include layout="@layout/layout_button_row" />
+          <include layout="@layout/divider" />
+
+          <include layout="@layout/layout_button_row" />
+          <include layout="@layout/divider" />
+
+          <include layout="@layout/layout_button_row" />
+
+
+        </LinearLayout>
+      </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+  </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+

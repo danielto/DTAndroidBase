@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <dimen name="activity_horizontal_margin">16dp</dimen>
+  <dimen name="activity_vertical_margin">16dp</dimen>
+
+  <dimen name="margin_56">56dp</dimen>
+  <dimen name="margin_48">48dp</dimen>
+  <dimen name="margin_32">32dp</dimen>
+  <dimen name="margin_giga">24dp</dimen>
+  <dimen name="margin_mega">20dp</dimen>
+  <dimen name="margin_huger">18dp</dimen>
+  <dimen name="margin_huge">16dp</dimen>
+  <dimen name="margin_larger">14dp</dimen>
+  <dimen name="margin_large">12dp</dimen>
+  <dimen name="margin_medium">8dp</dimen>
+  <dimen name="margin_small">4dp</dimen>
+  <dimen name="margin_mini">2dp</dimen>
+  <dimen name="margin_tiny">1dp</dimen>
+  <dimen name="margin_extra">0dp</dimen>
+  <dimen name="margin_huge_negative">-20dp</dimen>
+  <dimen name="margin_10">10dp</dimen>
+
+  <!--TEXT SIZES-->
+  <dimen name="text_size_giga">26sp</dimen>
+  <dimen name="text_size_mega_2">24sp</dimen>
+  <dimen name="text_size_mega">22sp</dimen>
+  <dimen name="text_size_huger">20sp</dimen>
+  <dimen name="text_size_huge">18sp</dimen>
+  <dimen name="text_size_larger">16sp</dimen>
+  <dimen name="text_size_large">14sp</dimen>
+  <dimen name="text_size_medium">12sp</dimen>
+  <dimen name="text_size_small">10sp</dimen>
+  <dimen name="text_size_mini">8sp</dimen>
+  <dimen name="text_size_tiny">6sp</dimen>
+
+
+  <dimen name="settings_row_height">56dp</dimen>
+
+
+</resources>

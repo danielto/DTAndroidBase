@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MyArchitecture1</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_favorite">Favorite</string>
+    <string name="menu_profile">Profile</string>
+
+    <string name="ac_settings">Settings</string>
+
+    <string name="lorem_ipsum">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Sed elit
+        dui, pellentesque a, faucibus vel, interdum nec, diam. Integer pellentesque quam vel velit.
+        Phasellus enim erat, vestibulum vel, aliquam a, posuere eu, velit. Sed ac dolor sit amet
+        purus malesuada congue. Aenean vel massa quis mauris vehicula lacinia. Sed ac dolor sit
+        amet purus malesuada congue.
+    </string>
+
+  <string name="email_waiting_message">E-mail %1$s is waiting for approval. Please check your e-mail box.</string>
+
+    <string name="logout">Logout</string>
+</resources>
