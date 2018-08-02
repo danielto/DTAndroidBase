@@ -4,15 +4,19 @@ import android.arch.persistence.room.Database
 import android.arch.persistence.room.Room
 import android.arch.persistence.room.RoomDatabase
 import android.content.Context
+import cz.tokar.android.app.myarchitecture1.database.dao.CommentDao
 
 import cz.tokar.android.app.myarchitecture1.database.dao.UserDao
+import cz.tokar.android.app.myarchitecture1.database.entity.Comment
 import cz.tokar.android.app.myarchitecture1.database.entity.User
 
-@Database(entities = arrayOf(User::class), version = 1)
+@Database(entities = [User::class, Comment::class], version = 2)
 abstract class MyDatabase : RoomDatabase() {
 
   // --- DAO ---
   abstract fun userDao(): UserDao
+
+  abstract fun commentDao(): CommentDao
 
   companion object {
 

@@ -4,7 +4,10 @@ import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
 
 import cz.tokar.android.app.myarchitecture1.ui.presenter.base.MyViewModelFactory
+import cz.tokar.android.app.myarchitecture1.ui.presenter.commentdetail.CommentDetailFragment
+import cz.tokar.android.app.myarchitecture1.ui.presenter.commentdetail.CommentDetailViewModel
 import cz.tokar.android.app.myarchitecture1.ui.presenter.favorite.FavoriteViewModel
+import cz.tokar.android.app.myarchitecture1.ui.presenter.history.HistoryViewModel
 import cz.tokar.android.app.myarchitecture1.ui.presenter.main.MainViewModel
 import cz.tokar.android.app.myarchitecture1.ui.presenter.profile.ProfileViewModel
 import dagger.Binds
@@ -30,6 +33,16 @@ abstract class ViewModelModule {
   @IntoMap
   @ViewModelKey(ProfileViewModel::class)
   abstract fun bindProfileViewModel(vm: ProfileViewModel): ViewModel
+
+  @Binds
+  @IntoMap
+  @ViewModelKey(HistoryViewModel::class)
+  abstract fun bindHistoryViewModel(vm: HistoryViewModel): ViewModel
+
+  @Binds
+  @IntoMap
+  @ViewModelKey(CommentDetailViewModel::class)
+  abstract fun bindCommentDetailViewModel(vm: CommentDetailViewModel): ViewModel
 
   @Binds
   abstract fun bindViewModelFactory(factory: MyViewModelFactory): ViewModelProvider.Factory

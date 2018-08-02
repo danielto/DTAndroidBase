@@ -1,0 +1,30 @@
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/listItemComment"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:paddingLeft="@dimen/margin_huge"
+  android:paddingRight="@dimen/margin_huge"
+  android:background="?attr/selectableItemBackground"
+  >
+
+  <TextView
+    android:id="@+id/tvCommentTitle"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textStyle="bold"
+    tools:text="title"
+    style="@style/Text.Huge"
+    />
+
+  <TextView
+    android:id="@+id/tvCommentMessage"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/margin_medium"
+    android:layout_below="@id/tvCommentTitle"
+    tools:text="3r32t"
+    />
+
+</RelativeLayout>

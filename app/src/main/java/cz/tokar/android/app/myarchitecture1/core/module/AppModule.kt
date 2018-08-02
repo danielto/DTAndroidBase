@@ -4,10 +4,12 @@ import android.arch.persistence.room.Room
 import android.content.Context
 import cz.tokar.android.app.myarchitecture1.App
 import cz.tokar.android.app.myarchitecture1.database.MyDatabase
+import cz.tokar.android.app.myarchitecture1.database.dao.CommentDao
 import cz.tokar.android.app.myarchitecture1.database.dao.UserDao
 import cz.tokar.android.app.myarchitecture1.helper.AppExecutors
 import cz.tokar.android.app.myarchitecture1.helper.PreferenceHelper
 import cz.tokar.android.app.myarchitecture1.network.ApiServices
+import cz.tokar.android.app.myarchitecture1.repo.CommentsRepository
 import cz.tokar.android.app.myarchitecture1.repo.UserRepository
 import dagger.Module
 import dagger.Provides
@@ -51,8 +53,20 @@ class AppModule {
 
   @Provides
   @Singleton
-  fun provideUserRepository(userDao: UserDao, retrofit: Retrofit, executors: AppExecutors ): UserRepository {
-    return UserRepository(userDao, retrofit, executors)
+  fun provideCommentDao(db: MyDatabase): CommentDao {
+    return db.commentDao()
+  }
+
+  @Provides
+  @Singleton
+  fun provideUserRepository(dao: UserDao, retrofit: Retrofit, executors: AppExecutors ): UserRepository {
+    return UserRepository(dao, retrofit, executors)
+  }
+
+  @Provides
+  @Singleton
+  fun provideCommentsRepository(dao: CommentDao, retrofit: Retrofit, executors: AppExecutors ): CommentsRepository {
+    return CommentsRepository(dao, retrofit, executors)
   }
 
   @Provides

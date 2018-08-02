@@ -6,6 +6,7 @@ import cz.tokar.android.app.myarchitecture1.BuildConfig
 import cz.tokar.android.app.myarchitecture1.R
 import cz.tokar.android.app.myarchitecture1.helper.PreferenceHelper
 import cz.tokar.android.app.myarchitecture1.network.NetworkInterceptor
+import cz.tokar.android.app.myarchitecture1.utils.LiveDataCallAdapterFactory
 import dagger.Module
 import dagger.Provides
 import dagger.Reusable
@@ -14,8 +15,6 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
-
-//const val BASE_URL = "https://jsonplaceholder.typicode.com"
 
 
 /**
@@ -53,6 +52,7 @@ class NetworkModule {
       .baseUrl(url)
       .client(client)
       .addConverterFactory(gsonConverterFactory)
+      .addCallAdapterFactory(LiveDataCallAdapterFactory())
 //      .addCallAdapterFactory(RxJava2CallAdapterFactory.createWithScheduler(Schedulers.io()))
       .build()
   }

@@ -1,10 +1,13 @@
 package cz.tokar.android.app.myarchitecture1.helper.extensions
 
 import android.arch.lifecycle.*
+import android.content.Context
 import android.content.SharedPreferences
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentActivity
+import android.support.v4.content.ContextCompat
 import cz.tokar.android.app.myarchitecture1.App
+import cz.tokar.android.app.myarchitecture1.network.model.base.Resource
 
 /**
  * Gets string from resources.
@@ -12,6 +15,23 @@ import cz.tokar.android.app.myarchitecture1.App
 fun Any.str(res: Int): String {
   return App.getResString(res)
 }
+
+/**
+ * Gets color from resources.
+ */
+fun Context.color(res: Int): Int = ContextCompat.getColor(this, res)
+
+/**
+ * Converts dimension resource value to pixel size.
+ */
+fun Context.dpToPx(res: Int): Int = this.resources.getDimensionPixelSize(res)
+
+fun Any.dpToPx(res: Int): Int = App.getResources()!!.getDimensionPixelSize(res)
+
+/**
+ * Converts dp size value to pixel size.
+ */
+fun Context.dpValueToPx(dpValue: Int): Float = (this.resources.displayMetrics.density * dpValue)
 
 
 /**
@@ -78,6 +98,14 @@ fun SharedPreferences.restoreInt(res: Int, defVal: Int = -1): Int {
   return this.getInt(str(res), defVal)
 }
 
+operator fun <T> MutableLiveData<ArrayList<T>>.plusAssign(values: List<T>?) {
+  val value = this.value ?: arrayListOf()
+  values?.let {
+    value.addAll(it)
+  }
+  this.value = value
+}
+
 //Antonio's Leiva way
 inline fun <reified T : ViewModel> FragmentActivity.getViewModel(viewModelFactory: ViewModelProvider.Factory): T {
   return ViewModelProviders.of(this, viewModelFactory)[T::class.java]
@@ -121,3 +149,33 @@ inline fun <reified T : ViewModel> Fragment.getViewModel(crossinline factory: ()
 
   return ViewModelProviders.of(this, vmFactory)[T::class.java]
 }
+
+/**
+ * Syntactic sugar for [LiveData.observe] function where the [Observer] is the last parameter.
+ * Hence can be passed outside the function parenthesis.
+ */
+inline fun <T> LiveData<T>.observe(owner: LifecycleOwner, crossinline observer: (T) -> Unit) {
+  this.observe(owner, Observer { it?.apply(observer) })
+}
+
+///**
+// * Eliminates the boiler plate on the UI when dealing with `LiveData<Resource<T>>`
+// * type from `Repository`.
+// * It internally updates the [list] based upon the status and executes
+// * the [f] only if status is either SUCCESS or ERROR.
+// */
+//fun <ResultType> Resource<ResultType>.load(list: CompleteRecyclerView, f: (ResultType?) -> Unit) {
+//  list.showState(status)
+//  load(f)
+//}
+//
+///**
+// * Eliminates the boiler plate on the UI when dealing with `LiveData<Resource<T>>`
+// * type from `Repository`.
+// * It internally executes the [f] only if status is either SUCCESS or ERROR.
+// */
+//fun <ResultType> Resource<ResultType>.load(f: (ResultType?) -> Unit) {
+//  if (!status.isLoading()) {
+//    f(data)
+//  }
+//}

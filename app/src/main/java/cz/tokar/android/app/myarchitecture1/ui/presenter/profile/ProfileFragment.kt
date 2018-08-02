@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.view.*
 import cz.tokar.android.app.myarchitecture1.MainActivity
 import cz.tokar.android.app.myarchitecture1.R
-import cz.tokar.android.app.myarchitecture1.helper.extensions.withViewModel
+import cz.tokar.android.app.myarchitecture1.helper.NavigationHelper
 import cz.tokar.android.app.myarchitecture1.ui.presenter.base.BaseFragment
 import cz.tokar.android.app.myarchitecture1.ui.presenter.main.MainFragment
 import kotlinx.android.synthetic.main.frg_profile.*
@@ -41,6 +41,10 @@ class ProfileFragment : BaseFragment() {
     viewModel.getUserEmail().observe(this, Observer {
       tvEmailWaiting.text = getString(R.string.email_waiting_message, it)
     })
+
+    btnHistory.setOnClickListener{
+      NavigationHelper.showHistoryFragment(activity as MainActivity, R.id.container, true)
+    }
   }
 
   override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -50,7 +54,7 @@ class ProfileFragment : BaseFragment() {
 
   /* Private methods ******************************/
   private fun setToolbarTitle(title: String?) {
-    Timber.v("[%s]::[observe: phone number]::[%s] ", TAG, title)
+    // todo set ion-android-person icon to title
     collapsingToolbar.title = title
   }
 

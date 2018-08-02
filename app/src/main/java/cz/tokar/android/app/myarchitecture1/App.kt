@@ -75,5 +75,7 @@ class App : Application(), HasActivityInjector {
       return sResources!!.getQuantityString(id, count, *formatArgs)
     }
 
+    fun getResources() = sResources
+
   }
 }

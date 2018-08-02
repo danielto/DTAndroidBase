@@ -139,6 +139,13 @@
     <item name="android:textSize">@dimen/text_size_giga</item>
   </style>
 
+  <style name="Text.Huge.Bold">
+    <item name="android:textStyle">bold</item>
+  </style>
+
+
+  <!--RED -->
+
   <style name="Text.Medium.Red">
     <item name="android:textColor">@color/red</item>
   </style>

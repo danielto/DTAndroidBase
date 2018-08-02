@@ -1,6 +1,7 @@
 package cz.tokar.android.app.myarchitecture1.network
 
 import android.arch.lifecycle.LiveData
+import cz.tokar.android.app.myarchitecture1.database.entity.Comment
 import cz.tokar.android.app.myarchitecture1.database.entity.User
 import cz.tokar.android.app.myarchitecture1.network.model.base.Resource
 import retrofit2.http.GET
@@ -12,5 +13,9 @@ interface ApiServices {
 
   @GET("users")
   fun getUsers(): LiveData<Resource<List<User>>>
+
+  @GET("comments")
+  fun getComments(): LiveData<Resource<List<Comment>>>
+
 
 }

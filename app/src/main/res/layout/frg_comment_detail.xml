@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  >
+
+  <android.support.design.widget.AppBarLayout
+    style="@style/MyToolbar"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <include
+      layout="@layout/toolbar"/>
+
+  </android.support.design.widget.AppBarLayout>
+
+  <android.support.v4.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    android:padding="@dimen/margin_huge"
+    android:clipToPadding="false"
+    >
+
+    <android.support.constraint.ConstraintLayout
+      android:id="@+id/main"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      >
+
+      <TextView
+        style="@style/Text.Huge.Bold"
+        android:id="@+id/tvCommentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+      <TextView
+        style="@style/Text.Medium"
+        android:id="@+id/tvCommentMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="gsagsagfsdgfsdsfdfsdhsfd"
+        app:layout_constraintTop_toBottomOf="@id/tvCommentTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+      <TextView
+        style="@style/Text.Small"
+        android:id="@+id/tvEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/margin_huge"
+        android:text="fdsagsfgs"
+        app:layout_constraintTop_toBottomOf="@id/tvCommentMessage"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+    </android.support.constraint.ConstraintLayout>
+  </android.support.v4.widget.NestedScrollView>
+
+</android.support.design.widget.CoordinatorLayout>
+
+
+

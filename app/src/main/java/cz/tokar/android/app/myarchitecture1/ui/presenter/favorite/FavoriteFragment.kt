@@ -2,7 +2,6 @@ package cz.tokar.android.app.myarchitecture1.ui.presenter.favorite
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,9 +9,6 @@ import cz.tokar.android.app.myarchitecture1.R
 import cz.tokar.android.app.myarchitecture1.ui.presenter.base.BaseFragment
 import cz.tokar.android.app.myarchitecture1.ui.presenter.main.MainFragment
 import kotlinx.android.synthetic.*
-import kotlinx.android.synthetic.main.frg_favorite.*
-import kotlinx.android.synthetic.main.text_view.*
-import kotlinx.android.synthetic.main.toolbar.*
 import timber.log.Timber
 
 
@@ -36,13 +32,7 @@ class FavoriteFragment : BaseFragment() {
     super.onActivityCreated(savedInstanceState)
     viewModel = ViewModelProviders.of(this, viewModelFactory).get(FavoriteViewModel::class.java)
 
-    message.text = "gdsagsf"
-    tvText.text = "dsagsfahfshasd"
-    myToolbar.title = "Fav Frag"
+//    setupToolbar(myToolbar, R.string.toolbar_favorite)
   }
 
-  override fun onDestroyView() {
-    super.onDestroyView()
-    clearFindViewByIdCache()
-  }
 }
