@@ -2,23 +2,22 @@ package cz.tokar.android.app.myarchitecture1.ui.presenter.favorite
 
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
+import android.support.design.widget.BottomSheetBehavior
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import cz.tokar.android.app.myarchitecture1.R
 import cz.tokar.android.app.myarchitecture1.ui.presenter.base.BaseFragment
 import cz.tokar.android.app.myarchitecture1.ui.presenter.main.MainFragment
 import kotlinx.android.synthetic.main.frg_favorite.*
 import kotlinx.android.synthetic.main.toolbar.*
 import timber.log.Timber
-import cz.tokar.android.app.myarchitecture1.R.id.mapView
-import com.google.android.gms.maps.MapsInitializer
-import com.google.android.gms.maps.model.LatLng
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.model.MarkerOptions
 
 
 
@@ -91,8 +90,11 @@ class FavoriteFragment : BaseFragment(), OnMapReadyCallback {
       uiSettings.isMyLocationButtonEnabled = true
       val brno = LatLng(49.194974, 16.608103)
       addMarker(MarkerOptions().position(brno).title("Brno"))
-      moveCamera(CameraUpdateFactory.newLatLng(brno))
-      animateCamera( CameraUpdateFactory.zoomTo( 18.0f ) )
+      val cameraPosition = CameraPosition.Builder()
+        .target(brno)
+        .zoom(18f)
+        .build()
+      animateCamera( CameraUpdateFactory.newCameraPosition(cameraPosition))
     }
 //    MapsInitializer.initialize(context!!) // only if features need to be used before obtaining a map
   }

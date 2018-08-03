@@ -38,5 +38,6 @@
   <dimen name="bottom_navigation_height">56dp</dimen>
   <dimen name="settings_row_height">56dp</dimen>
 
+  <dimen name="bottom_sheet_height">350dp</dimen>
 
 </resources>
