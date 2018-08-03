@@ -22,22 +22,22 @@ class MainViewModel @Inject constructor(
   private val TAG = MainViewModel::class.java.simpleName
 
   private var comments: LiveData<Resource<List<Comment>?>>
-  private var mediatorLiveData = MediatorLiveData<Resource<List<Comment>?>>()
+  private var commentsToFragment = MediatorLiveData<Resource<List<Comment>?>>()
 
   init {
     Timber.d("[%s]::[init]::[firstRun %b]", TAG, mPreferenceHelper.getFirstRun())
     mPreferenceHelper.setUserPhoneNumber("+420 777 123 654")
 
     comments = mCommentsRepository.getComments()
-    mediatorLiveData.addSource(comments, {mediatorLiveData.value = it})
+    commentsToFragment.addSource(comments, {commentsToFragment.value = it})
   }
 
-  fun getComments() = mediatorLiveData
+  fun getComments() = commentsToFragment
 
   fun refreshComments() {
     Timber.v("[%s]::[refresh comments]", TAG)
-    mediatorLiveData.removeSource(comments)
+    commentsToFragment.removeSource(comments)
     comments = mCommentsRepository.refreshCommets()
-    mediatorLiveData.addSource(comments, {mediatorLiveData.value = it})
+    commentsToFragment.addSource(comments, {commentsToFragment.value = it})
   }
 }

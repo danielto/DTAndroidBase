@@ -39,6 +39,8 @@ class MainFragment : BaseFragment() {
     return inflater.inflate(R.layout.frg_main, container, false)
   }
 
+
+
   override fun onActivityCreated(savedInstanceState: Bundle?) {
     super.onActivityCreated(savedInstanceState)
     mainViewModel = ViewModelProviders.of(this, viewModelFactory).get(MainViewModel::class.java)
@@ -60,6 +62,16 @@ class MainFragment : BaseFragment() {
     }
 
   }
+
+//  TODO implement this when support lib 28 is released
+//  https://www.youtube.com/watch?v=pErTyQpA390&feature=youtu.be&t=5m41s
+//
+//  override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+//    super.onViewCreated(view, savedInstanceState)
+//    mainViewModel.getComments().observe(viewLifeCycleOwner) {
+//      // todo
+//    }
+//  }
 
   override fun onDestroyView() {
     super.onDestroyView()

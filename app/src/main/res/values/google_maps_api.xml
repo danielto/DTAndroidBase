@@ -1,0 +1,19 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=CF:CA:39:C2:2C:A7:DE:7C:3F:DE:28:79:E6:10:E2:BA:02:9C:C0:98%3Bcom.cleevio.bringr.create_package.myLocation
+
+    You can also add your credentials to an existing key, using this line:
+    CF:CA:39:C2:2C:A7:DE:7C:3F:DE:28:79:E6:10:E2:BA:02:9C:C0:98;com.cleevio.bringr.create_package.myLocation
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBrPPO2eY109BLje5qyfgPrdP1twHMqu44</string>
+</resources>

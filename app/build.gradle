@@ -105,6 +105,11 @@ dependencies {
   implementation "com.android.support:cardview-v7:${supportVersion}"
   implementation "com.android.support.constraint:constraint-layout:1.1.2"
 
+  // Play services
+  implementation "com.google.android.gms:play-services-maps:$playServicesVersion"
+  implementation "com.google.android.gms:play-services-location:$playServicesVersion"
+
+
   // ViewModel and LiveData
   implementation "android.arch.lifecycle:extensions:${archComponents}"
   kapt "android.arch.lifecycle:compiler:${archComponents}"
