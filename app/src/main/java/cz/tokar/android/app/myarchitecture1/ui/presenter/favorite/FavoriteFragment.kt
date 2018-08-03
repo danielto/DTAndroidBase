@@ -89,8 +89,8 @@ class FavoriteFragment : BaseFragment(), OnMapReadyCallback {
     mGoogleMap?.apply {
       uiSettings.isMapToolbarEnabled = false
       uiSettings.isMyLocationButtonEnabled = true
-      val brno = LatLng(49.201441, 16.601861)
-      addMarker(MarkerOptions().position(brno).title("Cleevio in Brno"))
+      val brno = LatLng(49.194974, 16.608103)
+      addMarker(MarkerOptions().position(brno).title("Brno"))
       moveCamera(CameraUpdateFactory.newLatLng(brno))
       animateCamera( CameraUpdateFactory.zoomTo( 18.0f ) )
     }
